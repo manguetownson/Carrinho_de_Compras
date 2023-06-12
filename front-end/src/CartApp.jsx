@@ -11,7 +11,7 @@ export const CartApp = () => {
             <Navbar />
             <div className="container my-4">
 
-                <h3>Cart App</h3>
+                <h3>Produtos:</h3>
                 <CartRoutes
                     cartItems={cartItems}
                     handlerAddProductCart={handlerAddProductCart}
