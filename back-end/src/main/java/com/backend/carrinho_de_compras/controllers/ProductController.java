@@ -31,7 +31,7 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).body(productRepository.findAll());
     }
     @GetMapping("/products/{id}")
-    public ResponseEntity<Object> getOneProduct(@PathVariable(value="id") UUID id){
+    public ResponseEntity<Object> getOneProduct(@PathVariable(value="id") Long id){
         Optional<ProductModel> product0 = productRepository.findById(id);
         if(product0.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("produto não encontrado");
@@ -39,7 +39,7 @@ public class ProductController {
     return ResponseEntity.status(HttpStatus.OK).body(product0.get());
 }
     @PutMapping("/products/{id}")
-    public ResponseEntity<Object> updateProduct(@PathVariable(value="id") UUID id,
+    public ResponseEntity<Object> updateProduct(@PathVariable(value="id") Long id,
                                                 @RequestBody @Valid ProductDTO productDTO){
         Optional<ProductModel> product0 = productRepository.findById(id);
         if(product0.isEmpty()){
@@ -50,7 +50,7 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).body(productRepository.save(productModel));
     }
     @DeleteMapping("/products/{id}")
-    public ResponseEntity<Object> deleteProduct(@PathVariable(value="id") UUID id){
+    public ResponseEntity<Object> deleteProduct(@PathVariable(value="id") Long id){
         Optional<ProductModel> product0 = productRepository.findById(id);
         if(product0.isEmpty()){
             return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("produto não encontrado");
