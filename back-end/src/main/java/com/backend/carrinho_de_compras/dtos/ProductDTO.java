@@ -5,5 +5,5 @@ import jakarta.validation.constraints.NotNull;
 
 import java.util.UUID;
 
-public record ProductDTO(@NotBlank String name, @NotBlank String description, @NotNull UUID price) {
+public record ProductDTO(@NotBlank String name, @NotBlank String description, @NotNull Long price) {
 }
