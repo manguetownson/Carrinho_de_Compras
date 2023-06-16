@@ -16,9 +16,9 @@ public class ProductModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private UUID idProduct;
+    private Long id;
     private String name;
     private String description;
-    private UUID price;
+    private Long price;
 
 }
